@@ -343,7 +343,7 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto Lt" size="12" style="0"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Kemunculan &apos;Kata&apos; :"/>
+                    <Property name="text" type="java.lang.String" value="Kemunculan &apos;&apos; :"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblJumlahKalimat">

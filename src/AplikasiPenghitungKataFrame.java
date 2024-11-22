@@ -137,7 +137,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
         lblJumlahKarakter.setText("Jumlah Krakter :");
 
         lblKemunculanKata.setFont(new java.awt.Font("Roboto Lt", 0, 12)); // NOI18N
-        lblKemunculanKata.setText("Kemunculan 'Kata' :");
+        lblKemunculanKata.setText("Kemunculan '' :");
 
         lblJumlahKalimat.setFont(new java.awt.Font("Roboto Lt", 0, 12)); // NOI18N
         lblJumlahKalimat.setText("Jumlah Kalimat :");
