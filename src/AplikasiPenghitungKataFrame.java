@@ -290,7 +290,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCariKataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariKataActionPerformed
-         // Ambil teks dari JTextArea dan kata yang ingin dicari
+    // Ambil teks dari JTextArea dan kata yang ingin dicari
     String text = txtAreaInput.getText().toLowerCase();
     String wordToFind = txtInputKata.getText().toLowerCase();
 
@@ -298,11 +298,28 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
     int count = text.split("\\b" + wordToFind + "\\b").length - 1;
 
     // Tampilkan hasil di JLabel
-    lblKemunculanKata.setText("Kemunculan '" + wordToFind + "': " + count);:
+    lblKemunculanKata.setText("Kemunculan '" + wordToFind + "': " + count);
     }//GEN-LAST:event_btnCariKataActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        // TODO add your handling code here:
+    // Membuka JFileChooser untuk memilih lokasi penyimpanan
+    javax.swing.JFileChooser fileChooser = new javax.swing.JFileChooser();
+    int option = fileChooser.showSaveDialog(this);
+
+    if (option == javax.swing.JFileChooser.APPROVE_OPTION) {
+        try {
+            java.io.File file = fileChooser.getSelectedFile();
+            java.io.FileWriter writer = new java.io.FileWriter(file);
+
+            // Tulis teks dari JTextArea ke file
+            writer.write(txtAreaInput.getText());
+            writer.close();
+
+            javax.swing.JOptionPane.showMessageDialog(this, "Teks berhasil disimpan ke file!");
+        } catch (java.io.IOException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Terjadi kesalahan saat menyimpan file: " + e.getMessage());
+        }
+    }
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
