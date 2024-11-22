@@ -29,7 +29,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        scrollPaneInput = new javax.swing.JScrollPane();
+        scrollpanelInputText = new javax.swing.JScrollPane();
         txtAreaInput = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         txtInputKata = new javax.swing.JTextField();
@@ -79,7 +79,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
         txtAreaInput.setColumns(20);
         txtAreaInput.setRows(5);
         txtAreaInput.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Masukan Kata", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Roboto", 1, 12))); // NOI18N
-        scrollPaneInput.setViewportView(txtAreaInput);
+        scrollpanelInputText.setViewportView(txtAreaInput);
 
         jPanel4.setBackground(new java.awt.Color(249, 214, 137));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -233,7 +233,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(scrollPaneInput, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(scrollpanelInputText, javax.swing.GroupLayout.Alignment.LEADING))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
@@ -244,7 +244,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPaneInput, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(scrollpanelInputText, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -298,7 +298,29 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
-        // TODO add your handling code here:
+        // Ambil teks dari JTextArea
+    String text = txtAreaInput.getText();
+
+    // Hitung jumlah kata
+    String[] words = text.trim().split("\\s+");
+    int wordCount = words.length;
+
+    // Hitung jumlah karakter (tanpa spasi)
+    int charCount = text.replaceAll("\\s", "").length();
+
+    // Hitung jumlah kalimat
+    String[] sentences = text.split("[.!?]");
+    int sentenceCount = sentences.length;
+
+    // Hitung jumlah paragraf
+    String[] paragraphs = text.split("\\n+");
+    int paragraphCount = paragraphs.length;
+
+    // Tampilkan hasil di JLabel
+    lblJumlahKata.setText("Jumlah Kata: " + wordCount);
+    lblJumlahKarakter.setText("Jumlah Karakter: " + charCount);
+    lblJumlahKalimat.setText("Jumlah Kalimat: " + sentenceCount);
+    lblJumlahParagraf.setText("Jumlah Paragraf: " + paragraphCount);
     }//GEN-LAST:event_btnHitungActionPerformed
 
     private void txtInputKataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInputKataActionPerformed
@@ -357,7 +379,7 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblJumlahKata;
     private javax.swing.JLabel lblJumlahParagraf;
     private javax.swing.JLabel lblKemunculanKata;
-    private javax.swing.JScrollPane scrollPaneInput;
+    private javax.swing.JScrollPane scrollpanelInputText;
     private javax.swing.JTextArea txtAreaInput;
     private javax.swing.JTextField txtInputKata;
     // End of variables declaration//GEN-END:variables
