@@ -290,7 +290,15 @@ public class AplikasiPenghitungKataFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCariKataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariKataActionPerformed
-        // TODO add your handling code here:
+         // Ambil teks dari JTextArea dan kata yang ingin dicari
+    String text = txtAreaInput.getText().toLowerCase();
+    String wordToFind = txtInputKata.getText().toLowerCase();
+
+    // Hitung kemunculan kata
+    int count = text.split("\\b" + wordToFind + "\\b").length - 1;
+
+    // Tampilkan hasil di JLabel
+    lblKemunculanKata.setText("Kemunculan '" + wordToFind + "': " + count);:
     }//GEN-LAST:event_btnCariKataActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
